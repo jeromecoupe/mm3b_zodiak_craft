@@ -1,0 +1,19 @@
+columnSuffix: xtzcyhwe
+contentColumnType: string(512)
+fieldGroup: 9814f4ed-6059-4e2f-b479-f79703a6b72f # Company
+handle: companyAddressStreet
+instructions: null
+name: 'Address Street'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 128
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

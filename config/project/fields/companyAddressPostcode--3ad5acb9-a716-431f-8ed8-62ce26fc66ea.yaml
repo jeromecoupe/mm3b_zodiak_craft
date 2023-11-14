@@ -1,0 +1,19 @@
+columnSuffix: olnpfxgj
+contentColumnType: string(128)
+fieldGroup: 9814f4ed-6059-4e2f-b479-f79703a6b72f # Company
+handle: companyAddressPostcode
+instructions: null
+name: 'Address postcode'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 32
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

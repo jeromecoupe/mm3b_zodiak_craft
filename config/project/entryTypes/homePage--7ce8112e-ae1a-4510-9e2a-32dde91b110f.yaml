@@ -1,0 +1,152 @@
+fieldLayouts:
+  102f1b2d-41cc-4142-ac1f-60f587836e59:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 740da442-a4d6-482c-bcc3-e2853c2a157b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e4ff90e7-8991-4e58-b3f0-a2d62a8aaf46 # Big page title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c1f6ca0-e8d0-4a6a-9289-98946cf9b75b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 20c84198-de8a-45bf-8c38-ee911637b1fc # Intro
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ca20ca3b-264a-44ce-b499-c986f49eecca
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 17a5b1d8-3d8a-404d-b642-877685987ac8 # Banner
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 65c4ed1e-2731-452f-b13f-3a5c08564993
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: b8afceda-0a18-4d71-9348-8ee7dd9fac95
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 97b37750-a0d5-4a3e-8354-e1531b709d12 # What We Do Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2a303e8e-e4b5-4223-b48c-6bfadabcc540
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a95335bc-4991-4b9a-a1a6-159daef32f9c # What We Do Intro
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05fdb50e-4c0f-4a1d-91d8-0ba9daec5bf7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ef1fb6ef-4f7c-46f1-8c50-ad512f4112be # Skills
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6881d678-8219-48ad-b9ec-f8171d145501
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 39b85c45-7be5-4e45-bc43-6f2a17ca1a9c
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f03b4306-5a25-436a-a4f6-8661bc3c7382 # Projects Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 143850dc-cd6e-4c61-af40-3ee7ff55c49d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 03290c1b-5a49-44d1-94a7-2b41396b6689 # Projects Intro
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 07281b8e-e1c3-40a2-95a6-48d87bd59063
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 4cd5c600-8e56-4c5e-b089-0882b7608c72
+        userCondition: null
+handle: homePage
+hasTitleField: false
+name: 'Home Page'
+section: 6531ad63-82cc-478f-81cc-8498004f1920 # Home Page
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

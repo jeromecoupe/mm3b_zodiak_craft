@@ -1,0 +1,82 @@
+field: 3f2bb7bd-de11-4ee6-bbab-87072c65f599 # Body
+fieldLayouts:
+  096a212d-ca8a-42b8-a986-259069149bb3:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 0452bede-44e6-4089-a7de-6929bcfc1aca # Title
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8b6e7979-bee1-4e7a-b245-59244765644a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9ea131ef-ba91-4373-b9f7-e1b85002416c # Text
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95d42a70-c034-4daf-b3be-dabdd2ff0322
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f187a1dc-f9ea-4745-8445-0c1d45fd05a3
+        userCondition: null
+fields:
+  9ea131ef-ba91-4373-b9f7-e1b85002416c: # Text
+    columnSuffix: egmydcfx
+    contentColumnType: text
+    fieldGroup: null
+    handle: mxTextTxt
+    instructions: null
+    name: Text
+    searchable: false
+    settings:
+      availableTransforms: ''
+      availableVolumes: '*'
+      ckeConfig: a74d0b2d-84b8-411d-a05e-b7d88a511f93 # Basic
+      columnType: text
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
+      purifierConfig: null
+      purifyHtml: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      showWordCount: false
+      wordLimit: null
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  0452bede-44e6-4089-a7de-6929bcfc1aca: # Title
+    columnSuffix: wwaiioqr
+    contentColumnType: string(512)
+    fieldGroup: null
+    handle: mxTextTitle
+    instructions: null
+    name: Title
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 128
+      code: false
+      columnType: null
+      initialRows: 4
+      multiline: false
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: mxblockText
+name: Text
+sortOrder: 1

@@ -1,0 +1,15 @@
+<ul class="c-footernav">
+
+  {% set navEntries = craft.entries()
+    .section("mainnav")
+    .all() %}
+
+  {% for item in navEntries %}
+    
+    {% set linkedEntry = item.navEntry.one() %}
+    <li class="c-footernav__item">
+      <a class="c-footernav__link" href="{{ linkedEntry.url }}">{{ item.navLabel }}</a>
+    </li>
+
+  {% endfor %}
+</ul>

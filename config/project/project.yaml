@@ -1,0 +1,236 @@
+dateModified: 1699424533
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      disabled: true
+      key: singles
+      tableAttributes:
+        - link
+      type: native
+    -
+      heading: Pages
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: d10098dd-39c7-4726-b6e6-bde60f240797
+            values:
+              - 6531ad63-82cc-478f-81cc-8498004f1920 # Home Page
+              - daddc0b4-9c5b-4871-94e4-009b2b95c66d # Projects Page
+              - 177a552e-f6cf-48b6-8435-0798d851c716 # About Page
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:c2f98478-5cfe-4b80-bc61-d69fcbf7f93f'
+      label: 'Main Pages'
+      tableAttributes: '-'
+      type: custom
+    -
+      heading: Contenus
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: 'section:76e9dd94-2b82-432e-b8b9-d8fdcc5c98df' # Projects
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - link
+      type: native
+    -
+      heading: Categories
+      type: heading
+    -
+      key: 'section:3f1a3ea3-19b9-4525-8405-d80f950530b6' # Projects Types
+      type: native
+    -
+      heading: Contact
+      type: heading
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: 9624da6a-0516-4e6c-a00f-4744877dc41c
+            values:
+              - 44730960-16dd-40e2-9c36-5ce162cdc3dd # Company
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:22a0e9ec-bbc2-4285-ae9b-b17adca42bd8'
+      label: Company
+      tableAttributes: '-'
+      type: custom
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: c3088627-7591-4e9d-b550-80b9cee8f008
+            values:
+              - 932e44f0-6c27-4ffd-a6fd-ebecf9ed976d # Social Media
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      key: 'custom:425c4027-7318-4f99-875a-03c018e3a36e'
+      label: 'Social Media'
+      tableAttributes: '-'
+      type: custom
+    -
+      heading: Navigations
+      type: heading
+    -
+      defaultSort:
+        - structure
+        - asc
+      disabled: false
+      key: 'section:df2d68eb-2754-4b6e-896c-c06914209e5a' # Main navigation
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - link
+      type: native
+email:
+  fromEmail: jercoupe@gmail.com
+  fromName: zodiak
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  banners:
+    hasUrls: true
+    name: Banners
+    settings:
+      path: '@assetsBasePath/banners_images'
+    type: craft\fs\Local
+    url: '@assetsBaseUrl/banners_images'
+  projectsImages:
+    hasUrls: true
+    name: 'Projects Images'
+    settings:
+      path: '@assetsBasePath/projects_images'
+    type: craft\fs\Local
+    url: '@assetsBaseUrl/projects_images'
+meta:
+  __names__:
+    0b8b01fe-a1ec-47cf-8eab-abad9e8c53bf: 'Video Provider' # Video Provider
+    0b539942-d8fb-499d-8876-516f1e5c69b6: 'About page' # About page
+    0c422cfc-7d9a-41b6-8fb0-5da690e9948b: 'Team title' # Team title
+    3ad5acb9-a716-431f-8ed8-62ce26fc66ea: 'Address postcode' # Address postcode
+    3f1a3ea3-19b9-4525-8405-d80f950530b6: 'Projects Types' # Projects Types
+    3f2bb7bd-de11-4ee6-bbab-87072c65f599: Body # Body
+    7ce8112e-ae1a-4510-9e2a-32dde91b110f: 'Home Page' # Home Page
+    9ea131ef-ba91-4373-b9f7-e1b85002416c: Text # Text
+    12e2c4e6-a4ac-4173-a00c-d665dced72ca: 'Related Entry' # Related Entry
+    17a5b1d8-3d8a-404d-b642-877685987ac8: Banner # Banner
+    20c84198-de8a-45bf-8c38-ee911637b1fc: Intro # Intro
+    22a1ad1e-f84b-4380-b82a-ac186d12319b: 'Address Street' # Address Street
+    23b162a1-053c-459a-862f-163066e5d9f5: Default # Default
+    25cfb6cb-e80d-4246-8c75-6728de260226: Common # Common
+    53d0f18e-3cb4-4227-a49b-f1817c45883d: Caption # Caption
+    60a22a15-1878-4ff6-9713-5c2c12db3525: 'Values title' # Values title
+    73cf1c96-efca-43ba-8bcc-eef9f3a8d442: Company # Company
+    76e9dd94-2b82-432e-b8b9-d8fdcc5c98df: Projects # Projects
+    97b37750-a0d5-4a3e-8354-e1531b709d12: 'What We Do Title' # What We Do Title
+    98d41b97-7d03-4f4a-ac6c-621c3e902e34: Default # Default
+    177a552e-f6cf-48b6-8435-0798d851c716: 'About Page' # About Page
+    409e18f1-2ea4-4fd3-801d-03ca6518b020: Label # Label
+    0452bede-44e6-4089-a7de-6929bcfc1aca: Title # Title
+    516a237a-b730-463e-a03c-6b2bb2411511: Text # Text
+    799b1430-d0f6-4c3c-aecd-579df0e77f17: Homepage # Homepage
+    907c13be-0f5c-41cd-ae5b-84256098d022: 'Company Email' # Company Email
+    932e44f0-6c27-4ffd-a6fd-ebecf9ed976d: 'Social Media' # Social Media
+    2073bf22-91d1-4884-8d63-fd816cdcafe5: 'Public Schema' # Public Schema
+    2355c0f4-05c8-48bd-82a7-3960f4e16063: Projects # Projects
+    02386d47-d211-4898-81a8-11e1a7ca0b4f: Nav # Nav
+    03290c1b-5a49-44d1-94a7-2b41396b6689: 'Projects Intro' # Projects Intro
+    4419e991-2d92-4869-a704-8e4c6035c37c: 'About Page' # About Page
+    5658e8fa-6d9d-45ac-a033-0e93576f5e43: Skill # Skill
+    5926fc74-9319-47c2-b0a3-e4c2ee5e1ffb: Caption # Caption
+    6007bc23-db9d-4053-a881-a17dc5fa936f: 'Video ID' # Video ID
+    6320a2f4-05d3-4bc5-86ee-bf59cae2a309: 'Projects Page' # Projects Page
+    6531ad63-82cc-478f-81cc-8498004f1920: 'Home Page' # Home Page
+    8620e3e3-971c-4771-b091-8be36dfcbd9f: Default # Default
+    9647ba8c-62b2-42f9-ba55-d2d17ef5a78e: 'Address Street Number' # Address Street Number
+    9814f4ed-6059-4e2f-b479-f79703a6b72f: Company # Company
+    46713b47-ad69-46ee-9c55-47a920d585aa: 'Facebook URL' # Facebook URL
+    76746ede-1562-4aa5-abe0-bd522cf90ae7: Image # Image
+    269681ce-5622-42b4-93b2-33b6e2d3605f: Pages # Pages
+    529317c3-0ac0-4684-a951-60bee993b7cd: Subtitle # Subtitle
+    959209d0-45bd-411a-9713-b4983364f572: Simple # Simple
+    5825115b-231b-49de-94ce-064d49922aee: Instagram # Instagram
+    44730960-16dd-40e2-9c36-5ce162cdc3dd: Company # Company
+    70153458-713c-4f71-806c-a542381ee3d2: Title # Title
+    91394785-05ed-4602-bc32-95a836bd91c3: 'Team intro' # Team intro
+    a39f5d3f-ea95-4409-bcf6-d70507685c35: Phone # Phone
+    a68a6aaa-1fce-40ff-9f32-26d305951bb1: Image # Image
+    a74d0b2d-84b8-411d-a05e-b7d88a511f93: Basic # Basic
+    a345fca1-3553-4b32-a775-ea6d89626b13: zodiak # zodiak
+    a1645b82-bada-4988-a55c-d81f42035c7e: Intro # Intro
+    a95335bc-4991-4b9a-a1a6-159daef32f9c: 'What We Do Intro' # What We Do Intro
+    a4859804-a2aa-4c2e-a851-4c546585e899: zodiak # zodiak
+    ac2b7c49-682c-470c-9273-3a7a544d1158: Types # Types
+    af2c19a9-dfa7-46f3-93e1-d5ea326df520: 'Name of the company' # Name of the company
+    b5f0074f-3e16-4f25-b76f-ed78a86b27e4: Text # Text
+    bafc1e4f-6afb-4bcd-96f0-2e32d3662450: Image # Image
+    c01b68b9-90b5-4b00-bd31-90d0a91c3c47: 'Banners Images' # Banners Images
+    d2c7618c-fd19-46bb-aada-8bb8cff73dcd: 'Address city' # Address city
+    daddc0b4-9c5b-4871-94e4-009b2b95c66d: 'Projects Page' # Projects Page
+    dd5b6c9b-5d4d-4a3c-ae75-bb514488a329: Video # Video
+    df2d68eb-2754-4b6e-896c-c06914209e5a: 'Main navigation' # Main navigation
+    e3fc19a8-b337-4fb1-8276-52d33d5541af: 'Projects Images' # Projects Images
+    e4ff90e7-8991-4e58-b3f0-a2d62a8aaf46: 'Big page title' # Big page title
+    e94d56db-4aa6-4b46-a399-10962f09e850: X # X
+    e720851b-0268-4c54-901a-c48a4674b572: 'Values Intro' # Values Intro
+    ef1fb6ef-4f7c-46f1-8c50-ad512f4112be: Skills # Skills
+    f03b4306-5a25-436a-a4f6-8661bc3c7382: 'Projects Title' # Projects Title
+    f2c3d2fc-d31b-4743-92b5-ea0af801b2ed: 'Phone (Machines)' # Phone (Machines)
+    f6c1ca0b-f0e2-471f-bfc6-1d83386d263e: 'Social Media' # Social Media
+    f26311f9-63aa-4363-b448-0b0e98547b4f: 'Social Media' # Social Media
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+system:
+  edition: pro
+  live: true
+  name: zodiak
+  retryDuration: null
+  schemaVersion: 4.5.3.0
+  timeZone: Europe/Brussels
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: projects
+name: Projects
+propagationMethod: all
+siteSettings:
+  a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
+    enabledByDefault: true
+    hasUrls: true
+    template: projects/_entry.twig
+    uriFormat: 'projects/{slug}'
+type: channel

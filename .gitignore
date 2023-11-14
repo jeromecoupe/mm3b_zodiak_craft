@@ -1,0 +1,13 @@
+# Mac stuff
+.DS_Store
+
+# Code editors
+/.idea
+
+# Node stuff
+/node_modules
+
+# craft stuff
+/.env
+/vendor
+/web/uploads/**/*

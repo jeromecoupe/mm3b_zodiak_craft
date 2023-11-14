@@ -1,0 +1,31 @@
+{#
+Matrix block for Video
+- @param {mxBlock} - Matrix block - contains all fields 
+#}
+
+{# -----------------------------------
+variables
+----------------------------------- #}
+
+{% set videoProvider = mxBlock.mxVideoProvider ?? null %}
+{% set videoId = mxBlock.mxVideoId ?? null %}
+{% set videoCaption = mxBlock.mxVideoCaption ?? null %}
+{% set iframeSrc = "https://www.youtube-nocookie.com/embed/#{mxBlock.mxVideoId}" %}
+{% if videoProvider == "vimeo" %}
+  {% set iframeSrc = "https://player.vimeo.com/video/#{mxBlock.mxVideoId}?dnt=1" %}
+{% endif %}
+
+{# -----------------------------------
+template
+----------------------------------- #}
+
+<div class="c-casemodule">
+  <div class="l-container">
+    <figure class="c-figure">
+      <div class="o-fluidvideo">
+        <iframe src="{{ iframeSrc }}" width="1500" height="844" allowfullscreen></iframe>
+      </div>
+      <figcaption class="c-figure__caption">{{ videoCaption }}</figcaption>
+    </figure>
+  </div>
+</div>

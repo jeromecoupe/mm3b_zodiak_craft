@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: projectsPage
+name: 'Projects Page'
+propagationMethod: all
+siteSettings:
+  a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
+    enabledByDefault: true
+    hasUrls: true
+    template: projects/_index.twig
+    uriFormat: projects
+type: single

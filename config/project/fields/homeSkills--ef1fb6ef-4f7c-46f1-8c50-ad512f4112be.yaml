@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 799b1430-d0f6-4c3c-aecd-579df0e77f17 # Homepage
+handle: homeSkills
+instructions: null
+name: Skills
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_homeskills}}'
+  maxBlocks: 5
+  minBlocks: 1
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

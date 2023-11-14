@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: socialmedia
+name: 'Social Media'
+propagationMethod: all
+siteSettings:
+  a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

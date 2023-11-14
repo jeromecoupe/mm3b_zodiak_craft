@@ -1,0 +1,4 @@
+{% macro addSpans(string) %}
+  {% set output = string|replace("{{{", "<span>")|replace("}}}", "</span>") %}
+  {{ output|raw }}
+{% endmacro %}

@@ -1,0 +1,26 @@
+isPublic: true
+name: 'Public Schema'
+scope:
+  - 'sites.a345fca1-3553-4b32-a775-ea6d89626b13:read' # zodiak
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'
+  - 'sections.177a552e-f6cf-48b6-8435-0798d851c716:read' # About Page
+  - 'entrytypes.4419e991-2d92-4869-a704-8e4c6035c37c:read' # About Page
+  - 'sections.44730960-16dd-40e2-9c36-5ce162cdc3dd:read' # Company
+  - 'entrytypes.73cf1c96-efca-43ba-8bcc-eef9f3a8d442:read' # Company
+  - 'sections.6531ad63-82cc-478f-81cc-8498004f1920:read' # Home Page
+  - 'entrytypes.7ce8112e-ae1a-4510-9e2a-32dde91b110f:read' # Home Page
+  - 'sections.df2d68eb-2754-4b6e-896c-c06914209e5a:read' # Main navigation
+  - 'entrytypes.98d41b97-7d03-4f4a-ac6c-621c3e902e34:read' # Default
+  - 'sections.76e9dd94-2b82-432e-b8b9-d8fdcc5c98df:read' # Projects
+  - 'entrytypes.23b162a1-053c-459a-862f-163066e5d9f5:read' # Default
+  - 'sections.daddc0b4-9c5b-4871-94e4-009b2b95c66d:read' # Projects Page
+  - 'entrytypes.6320a2f4-05d3-4bc5-86ee-bf59cae2a309:read' # Projects Page
+  - 'sections.3f1a3ea3-19b9-4525-8405-d80f950530b6:read' # Projects Types
+  - 'entrytypes.8620e3e3-971c-4771-b091-8be36dfcbd9f:read' # Default
+  - 'sections.932e44f0-6c27-4ffd-a6fd-ebecf9ed976d:read' # Social Media
+  - 'entrytypes.f6c1ca0b-f0e2-471f-bfc6-1d83386d263e:read' # Social Media
+  - 'volumes.e3fc19a8-b337-4fb1-8276-52d33d5541af:read' # Projects Images
+  - 'volumes.c01b68b9-90b5-4b00-bd31-90d0a91c3c47:read' # Banners Images
+  - 'usergroups.everyone:read'

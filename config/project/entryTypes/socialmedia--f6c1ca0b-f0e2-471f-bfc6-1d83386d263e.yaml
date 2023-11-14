@@ -1,0 +1,82 @@
+fieldLayouts:
+  9d695436-aa8a-416f-8eff-e3395994b074:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: b5c676e4-a0b1-41fe-9bd3-bdf46a85272b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 46713b47-ad69-46ee-9c55-47a920d585aa # Facebook URL
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bb979c14-b8f2-45dc-bdc4-9b554e2ea87a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5825115b-231b-49de-94ce-064d49922aee # Instagram
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7a2a5ebb-0411-4f96-a6ff-c3c65fb1e2f6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: e94d56db-4aa6-4b46-a399-10962f09e850 # X
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7aca2f86-1cc5-4eed-a58e-03190b800ebd
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: d6f0f6cc-118b-47c1-ba10-867cc97a04f2
+        userCondition: null
+handle: socialmedia
+hasTitleField: false
+name: 'Social Media'
+section: 932e44f0-6c27-4ffd-a6fd-ebecf9ed976d # Social Media
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: mainnav
+name: 'Main navigation'
+propagationMethod: all
+siteSettings:
+  a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: 1
+  uid: 0665f82f-88ca-40a4-9f35-ddc4410eb272
+type: structure

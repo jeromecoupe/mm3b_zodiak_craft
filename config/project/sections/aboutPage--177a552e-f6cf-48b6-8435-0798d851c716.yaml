@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: aboutPage
+name: 'About Page'
+propagationMethod: all
+siteSettings:
+  a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
+    enabledByDefault: true
+    hasUrls: true
+    template: about/_index.twig
+    uriFormat: about
+type: single

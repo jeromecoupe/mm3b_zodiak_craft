@@ -1,0 +1,156 @@
+{# extended template #}
+{% extends "_layouts/base.twig" %}
+
+{# macros #}
+{% from "_macros/strings.twig" import addSpans %}
+
+{# 
+We have multiple entries linking to the same template with different URLs
+- The projectsPage single (when we click on navigation)
+- Every entry from the projectsTypes section (when we click on one type)
+
+The `entry` variable Craft gives us changes
+We want this `entry` variable to always point to the projctsPage single > we define it manually.
+#}
+{% set entry = craft.entries()
+  .section("projectsPage")
+  .one() %}
+
+{#
+Get selected type if it exist
+- If the URL is corresponding to a type entry
+- If if doesn't exist > "all"
+
+We use the craft.app.getSegment method to get the 2nd segment of the URL
+#}
+
+{% set typeSlug = craft.app.request.getSegment(2) ?? null %}
+{% set projectType = (typeSlug) ? craft.entries().section("projectsTypes").slug(typeSlug).one() : "all" %}
+
+{# content #}
+{% block content %}
+
+  {# big title #}
+  <div class="c-pagesection  c-pagesection--brand">
+    <div class="l-container">
+      <h1 class="c-pagetitle  u-mb-none">{{ addSpans(entry.pageBigTitle) }}</h1>
+    </div>
+  </div>
+
+  <div class="c-pagesection">
+    <div class="l-container">
+
+      <div class="c-categories">
+        <nav>
+
+          <h2 class="c-categories__title">Types of work</h2>
+
+          {# Get all projects IDS #}
+          {% set allProjectsIds = craft.entries()
+            .section("projects")
+            .ids()  %}
+
+          {# get projects types related to one or more projects Ids #}
+          {% set allTypes = craft.entries()
+            .section("projectsTypes")
+            .orderBy("title ASC")
+            .relatedTo(allProjectsIds)
+            .all() %}
+          
+          {% for item in allTypes %}
+            {% if loop.first %}<ul class="c-catlist">{% endif %}
+
+              {% if loop.first %}
+
+                {% set currentClass = (projectType == "all") ? "is-current" : "" %}
+                {% set currentAria = (projectType == "all") ? 'aria-current="page"' : "" %}
+                
+                <li class="c-catlist__item">
+                  <a class="c-catlist__link  {{ currentClass }}" {{ currentAria | raw }} href="{{ entry.url }}">All types</a>
+                </li>
+
+              {% endif %}
+
+              {% set currentClass = (projectType != "all" and projectType.id == item.id) ? "is-current" : "" %}
+              {% set currentAria = (projectType != "all" and projectType.id == item.id) ? 'aria-current="page"' : "" %}
+
+              <li class="c-catlist__item">
+                  <a class="c-catlist__link  {{ currentClass }}" {{ currentAria | raw }} href="{{ item.url }}">{{ item.title }}</a>
+              </li>
+
+            {% if loop.last %}</ul>{% endif %}
+          {% endfor %}
+
+        </nav>
+      </div>
+
+    {# get all projects
+    - limit: specifies the number of projects we want per page
+    - we don't use all() or one() or anything like that because the paginate tag needs a Query (and not an array of objects) #}
+    {% set itemsPerPage = 4 %}
+
+    {% set allProjects = craft.entries()
+      .section("projects")
+      .orderBy("postDate DESC")
+      .limit(itemsPerPage) %}
+
+    {# 
+      if projectType != "all"
+      only get projects relatedTo the projectType entry 
+
+      - We modify the Entry query for projects using {% do %}
+      - {% do %}
+    #}
+    {% if projectType != "all" %}
+      {% do allProjects.relatedTo(projectType) %}
+    {% endif %}
+
+    {# 
+    paginate projects: the {% paginate %} tag returns 
+    - paginate: an object used for pagination interface
+    - projects: paginated projects 
+    #}
+    {% paginate allProjects as paginate, projects %}
+
+    {# loop over paginated projects #}
+    {% for item in projects %}
+      {% if loop.first %}<ul class="l-grid  l-grid--2cols@small  l-grid--3cols@medium  l-grid--4cols@large">{% endif %}
+        <li>
+
+          {{ include("_components/project.twig", {
+            project: item
+          }, with_context = false) }}
+
+        </li>
+      {% if loop.last %}</ul>{% endif %}
+    {% endfor %}
+
+    {# 
+      pagination
+      https://craftcms.com/docs/4.x/element-queries.html#navigating-pages 
+    #}
+    {% if paginate.totalPages > 1 %}
+      <ul class="c-pagination">
+        {% if paginate.getPrevUrl() %}
+          <li class="c-pagination__item"><a class="c-pagination__previous" href="{{ paginate.getFirstUrl() }}">First</a></li>
+        {% endif %}
+        
+        {% if paginate.getPrevUrl() %}
+          <li class="c-pagination__item"><a class="c-pagination__link" href="{{ paginate.getPrevUrl() }}">{{ paginate.currentPage - 1 }}</a></li>
+        {% endif %}
+
+        <li class="c-pagination__item"><a class="c-pagination__link  is-active" href="#">{{ paginate.currentPage }}</a></li>
+
+        {% if paginate.getNextUrl() %}
+          <li class="c-pagination__item"><a class="c-pagination__link" href="{{ paginate.getNextUrl() }}">{{ paginate.currentPage + 1 }}</a></li>
+        {% endif %}
+
+        {% if paginate.getNextUrl() %}
+          <li class="c-pagination__item"><a class="c-pagination__next" href="{{ paginate.getLastUrl() }}">Last</a></li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+    </div>
+  </div>
+{% endblock %}

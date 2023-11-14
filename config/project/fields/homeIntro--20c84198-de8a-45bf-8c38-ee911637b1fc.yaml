@@ -1,0 +1,19 @@
+columnSuffix: knhsnlco
+contentColumnType: string(1200)
+fieldGroup: 799b1430-d0f6-4c3c-aecd-579df0e77f17 # Homepage
+handle: homeIntro
+instructions: null
+name: Intro
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 300
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

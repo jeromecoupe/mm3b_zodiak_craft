@@ -1,0 +1,61 @@
+{# extend layout #}
+{% extends "_layouts/base.twig" %}
+
+{# current section (for mainnav) #}
+{% set currentSection = craft.entries()
+  .section("projectsPage")
+  .one() %}
+
+{% block content %}
+
+  {% set image = entry.projectImage.one() %}
+  {% if image %}
+    <div class="c-banner">
+      <img src="{{ image.getUrl({ width: 800, height: 450 }) }}" 
+           srcset="{{ image.getUrl({ width: 800, height: 450 }) }} 800w,
+                   {{ image.getUrl({ width: 1024, height: 576 }) }} 1024w,
+                   {{ image.getUrl({ width: 1500, height: 844 }) }} 1500w," 
+           sizes="100vw"
+           decoding="async"
+           width="1500" 
+           height="844" 
+           alt="{{ image.alt }}">
+    </div>
+  {% endif %}
+  <div class="c-pagesection">
+    <div class="c-casemodule">
+      <div class="l-container  l-container--copy">
+          <h1 class="c-h1  u-mb-xs">{{ entry.title }}</h1>
+          <h2 class="c-subtitle">{{ entry.projectSubtitle }}</h2>
+          {{ entry.projectIntro }}
+      </div>
+    </div>
+
+    {% set mxBlocks = entry.projectBody.all() %}
+    {% for mxBlock in mxBlocks %}
+      {% switch mxBlock.type %}
+
+        {# Text Matrix Block #}
+        {% case "mxblockText" %}
+          {{ include ("_matrix/block_text.twig", {
+            mxBlock: mxBlock
+          }, with_context = false) }}
+        
+        {# Video Matrix Block #}  
+        {% case "mxblockVideo" %}
+          {{ include ("_matrix/block_video.twig", {
+            mxBlock: mxBlock
+          }, with_context = false) }}
+
+        {# Image Matrix Block #}
+        {% case "mxblockImage" %}
+          {{ include ("_matrix/block_image.twig", {
+            mxBlock: mxBlock
+          }, with_context = false) }}
+
+      {% endswitch %}
+    {% endfor %}
+  
+  </div>
+
+{% endblock %}

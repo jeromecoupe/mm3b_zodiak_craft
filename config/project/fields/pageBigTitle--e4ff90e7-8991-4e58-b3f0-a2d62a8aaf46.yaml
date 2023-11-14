@@ -1,0 +1,19 @@
+columnSuffix: dnkaitcl
+contentColumnType: string(256)
+fieldGroup: 269681ce-5622-42b4-93b2-33b6e2d3605f # Pages
+handle: pageBigTitle
+instructions: 'If you want colored words, surround them with "{{{" and "}}}" and let the magic happen.'
+name: 'Big page title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 64
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,132 @@
+{# template à étendre #}
+{% extends "_layouts/base.twig" %}
+
+{# macros #}
+{% from "_macros/strings.twig" import addSpans %}
+
+{# variables accessibles dans toute la chaine de templates par default (tous les includes et tous les extends) #}
+{% set metaTitle = "Home" %}
+{% set metaDescription = "The best homepage ever" %}
+
+{# contenu du block content #}
+{% block content %}
+    {#
+      Craft sait en observant l'URL qu'elle correspond à l'URL de la seule entry de la section homePage. Il va donc nous donner une variable "entry" automatiquement.
+      
+      - Cette variable contient un objet
+      - Cet objet a comme keys tous les champs assignés à l'entry homePage
+    #}
+    <div class="c-pagesection  c-pagesection--brand">
+      <div class="l-container">
+        <h1 class="c-pagetitle">{{ addSpans(entry.pageBigTitle) }}</h1>
+        <div class="c-homeintro">
+          <p>{{ entry.homeIntro }}</p>
+
+          {# link to project pages (dynamic) #}
+          {% set projectPage = craft.entries()
+            .section("projectsPage")
+            .one() %}
+          <p><a class="c-ctalink  c-ctalink--invert" href="{{ projectPage.url }}">Our projects {% include "_includes/svg/arrow.svg" %}</a></p>
+        </div>
+      </div>
+    </div>
+    {#
+      - Craft gives us an entry variable (single section / entry URL)
+      - It's an Assets field > we ALWAYS get an array
+      - We get the first item in the array with .one()
+    #}
+    {% set bannerImg = entry.homeBanner.one() %}
+    {% if bannerImg %}
+      <div class="c-banner">
+        <img src="{{ bannerImg.getUrl({ width: 800, height: 450 }) }}"
+             srcset="{{ bannerImg.getUrl({ width: 800, height: 450 }) }} 800w,
+                     {{ bannerImg.getUrl({ width: 1024, height: 576 }) }} 1024w,
+                     {{ bannerImg.getUrl({ width: 1500, height: 844 }) }} 1500w,"
+             sizes="100vw"
+             loading="lazy"
+             decoding="async"
+             width="1500"
+             height="844"
+             alt="people in the office">
+    {% endif %}
+    </div>
+    <div class="c-pagesection">
+      <div class="l-container">
+
+          <div class="l-split">
+            <h2 class="c-smalltitle">{{ entry.homeWedoTitle }}</h2>
+            <div>
+
+              <p class="c-intro">{{ entry.homeWedoIntro }}</p>
+
+              {#
+                Get all blocks in Matrix field
+                Craft sends back an array of Matrix Blocks
+                Each block is an object
+                - Key is the handle of the Matrix field
+                - Value is the value of the field
+              #}
+              {% set allSkills = entry.homeSkills.all() %}
+              {# loop through array #}
+              {% for item in allSkills %}
+                {% if loop.first %}<ul class="c-vlist  c-vlist--m">{% endif %}
+
+                  <li>
+                    <article class="c-service">
+                      <h3 class="c-service__title">{{ item.mxSkillTitle }}</h3>
+                      <p class="c-service__text">{{ item.mxSkillText }}</p>
+                    </article>
+                  </li>
+
+                {% if loop.last %}</ul>{% endif %}
+              {% endfor %}
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+    <div class="c-pagesection">
+      <div class="l-container">
+
+        <div class="l-split">
+          <h2 class="c-smalltitle">{{ entry.homeProjectsTitle }}</h2>
+          <div>
+            <p class="c-intro">{{ entry.homeProjectsIntro }}</p>
+          </div>
+        </div>
+
+        {#
+         Get 4 projects at random
+         - Craft returns an array of objects
+         - loop through the array and display all fields using their handles / keys 
+        #}
+
+        {% set homeProjects = craft.entries()
+          .section("projects")
+          .orderBy("RAND()")
+          .limit(4)
+          .all() %}
+        
+        {% for item in homeProjects %}
+          {% if loop.first %}<ul class="l-grid  l-grid--2cols@small  l-grid--4cols@large  u-mb-xl">{% endif %}
+
+            <li>
+              {{ include ("_components/project.twig", { 
+                project: item
+              }, with_context = false) }}
+            </li>
+          
+          {% if loop.last %}</ul>{% endif %}
+        {% endfor %}
+
+        {# project page dynalic link #}
+        {% set projectPage = craft.entries()
+          .section("projectsPage")
+          .one() %}
+        
+        <p><a class="c-ctalink" href="{{ projectPage.url }}">More projects {% include "_includes/svg/arrow.svg" %}</a></p>
+
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% set metaTitle = metaTitle|default("Zodiak is the best") %}
+{% set metaDescription = metaDescription|default("Your friendly agency") %}
+{% set metaImage = metaImage|default("/img/metaImage.jpg") %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zodiak Agency - {{ metaTitle }}</title>
+  <meta name="description" content="{{ metaDescription }}">
+
+  <link rel="preload" href="/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+
+  <meta property="og:url" content="{{ entry.url }}">
+  <meta property="og:title" content="{{ metaTitle }}">
+  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:image" content="{{ metaImage }}">
+  <meta property="og:site_name" content="Zodiak Agency">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <script defer type="module" src="/js/main.bundle.js"></script>
+</head>
+<body>
+  {{ include ("_includes/siteheader.twig") }}
+  
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  {{ include ("_includes/sitefooter.twig") }}
+</body>
+</html>

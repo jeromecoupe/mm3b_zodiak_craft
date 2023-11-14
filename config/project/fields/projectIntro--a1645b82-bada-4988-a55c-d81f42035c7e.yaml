@@ -1,0 +1,23 @@
+columnSuffix: nddbyiwl
+contentColumnType: text
+fieldGroup: 2355c0f4-05c8-48bd-82a7-3960f4e16063 # Projects
+handle: projectIntro
+instructions: null
+name: Intro
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: '*'
+  ckeConfig: a74d0b2d-84b8-411d-a05e-b7d88a511f93 # Basic
+  columnType: text
+  defaultTransform: null
+  enableSourceEditingForNonAdmins: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

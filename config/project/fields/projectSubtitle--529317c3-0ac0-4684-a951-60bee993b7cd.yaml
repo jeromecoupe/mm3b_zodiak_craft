@@ -1,0 +1,19 @@
+columnSuffix: wihlxvkn
+contentColumnType: string(256)
+fieldGroup: 2355c0f4-05c8-48bd-82a7-3960f4e16063 # Projects
+handle: projectSubtitle
+instructions: null
+name: Subtitle
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 64
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

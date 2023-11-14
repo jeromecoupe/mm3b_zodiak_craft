@@ -1,0 +1,14 @@
+columnSuffix: njsnughg
+contentColumnType: string(255)
+fieldGroup: f26311f9-63aa-4363-b448-0b0e98547b4f # Social Media
+handle: socialFacebookUrl
+instructions: null
+name: 'Facebook URL'
+searchable: false
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

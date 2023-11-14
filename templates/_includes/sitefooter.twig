@@ -1,0 +1,96 @@
+{# --------------------------------
+variables
+-------------------------------- #}
+
+{#
+  Getting both singles from Craft and setting variables
+#}
+
+{% set company = craft.entries()
+  .section("company")
+  .one() %}
+
+{% set socialmedia = craft.entries()
+  .section("socialmedia")
+  .one() %}
+
+{# --------------------------------
+template
+-------------------------------- #}
+<footer class="c-sitefooter">
+  <div class="l-container">
+    
+    <div class="c-sitefooter__contact">
+      
+      <div class="c-sitefooter__links">
+        <ul class="c-contactlist">
+          <li class="c-contactlist__item"><a class="c-contactlist__link" href="mailto:{{ company.companyEmail }}">{{ company.companyEmail }}</a></li>
+          <li class="c-contactlist__item"><a class="c-contactlist__link" href="tel:{{ company.companyPhoneMachines }}">{{ company.companyPhoneDisplay }}</a></li>
+        </ul>
+      </div>
+      <div class="c-sitefooter__social">
+        {# check if we have at least one of them #}
+        {% if socialmedia.socialInstagramUrl or 
+              socialmedia.socialFacebookUrl or 
+              socialmedia.socialXUrl %}
+          <nav aria-label="social media">
+            <ul class="c-socialmedia">
+              {# check insta #}
+              {% if socialmedia.socialInstagramUrl %}
+                <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialmedia.socialInstagramUrl }}" aria-label="Instragram">{% include "_includes/svg/icon_instagram.svg" %}</a></li>
+              {% endif %}
+              {# check facebook #}
+              {% if socialmedia.socialFacebookUrl %}
+                <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialmedia.socialFacebookUrl }}" aria-label="Facebook">{% include "_includes/svg/icon_facebook.svg" %}</a></li>
+              {% endif %}
+              {# check X #}
+              {% if socialmedia.socialXUrl %}
+                <li class="c-socialmedia__item"><a class="c-socialmedia__link" href="{{ socialmedia.socialXUrl }}" aria-label="X">{% include "_includes/svg/icon_x.svg" %}</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <div class="c-sitefooter__main">
+
+      <div class="c-sitefooter__address">
+        <address class="c-footeraddress">
+          {{ company.companyName }}<br>
+          {{ company.companyAddressStreet }}, {{ company.companyAddressNumber }}<br>
+          {{ company.companyAddressPostcode }} {{ company.companyAddressCity }}
+        </address>
+      </div>
+
+      <div class="c-sitefooter__mainnav">
+        <nav aria-label="footer navigation" id="footernav">
+
+            {{ include("_includes/footernav.twig") }}
+          
+        </nav>
+      </div>
+
+      <div class="c-sitefooter__legalnav">
+        <nav aria-label="legal navigation">
+          
+            <ul class="c-footernav">
+              <li class="c-footernav__item"><a class="c-footernav__link" href="/assets/legal_docs/privacy-policy.pdf">Privacy policy</a></li>
+            
+          
+            
+              <li class="c-footernav__item"><a class="c-footernav__link" href="/assets/legal_docs/terms-of-use.pdf">Terms of use</a></li>
+            </ul>
+          
+        </nav>
+      </div>
+      
+    </div>
+
+    <div class="c-sitefooter__end">
+      <p class="c-copyright">&copy; {{ "now"|date("Y") }} - Zodiak Agency</p>
+    </div>
+
+  </div>
+</footer>

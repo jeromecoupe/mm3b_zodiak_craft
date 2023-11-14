@@ -1,0 +1,19 @@
+columnSuffix: dtrlzyit
+contentColumnType: string(144)
+fieldGroup: 0b539942-d8fb-499d-8876-516f1e5c69b6 # About page
+handle: aboutTeamTitle
+instructions: null
+name: 'Team title'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 36
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

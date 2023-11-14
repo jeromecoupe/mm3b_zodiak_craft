@@ -1,0 +1,22 @@
+{#
+Matrix block for text
+- @param {mxBlock} - Matrix block - contains all fields 
+#}
+
+{# -----------------------------------
+variables
+----------------------------------- #}
+
+{% set title = mxBlock.mxTextTitle %}
+{% set text = mxBlock.mxTextTxt %}
+
+{# -----------------------------------
+template
+----------------------------------- #}
+
+<div class="c-casemodule">
+  <div class="l-container  l-container--copy">
+    <h2 class="c-h3">{{ title }}</h2>
+    {{ text }}
+  </div>
+</div>

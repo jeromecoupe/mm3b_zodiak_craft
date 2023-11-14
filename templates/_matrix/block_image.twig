@@ -1,0 +1,39 @@
+{#
+Matrix block for image
+- @param {mxBlock} - Matrix block - contains all fields 
+#}
+
+{# -----------------------------------
+variables
+----------------------------------- #}
+{% set img = mxBlock.mxImage.one() ?? null %}
+{% set caption = mxBlock.mxImageCaption ?? null %}
+
+{# -----------------------------------
+template
+----------------------------------- #}
+{% if img %}
+  <div class="c-casemodule">
+    <div class="l-container">
+      <figure class="c-figure">
+        <picture>
+          <source media="(min-width: 750px)" 
+                  srcset="{{ img.getUrl({ width: 1024 }) }}" alt="{{ img.alt }} 1024w,
+                          {{ img.getUrl({ width: 1500 }) }}" alt="{{ img.alt }} 1500w" 
+                  width="1500" 
+                  height="844" 
+                  sizes="100vw">
+          <img src="{{ img.getUrl({ width: 800, height: 800 }) }}" alt="{{ img.alt }}"      
+               loading="lazy" 
+               decoding="async" 
+               width="800" 
+               height="800" 
+               class="o-fluidimg  o-fluidimg--full" 
+               alt="{{ img.alt }}">
+        </picture>
+        <figcaption class="c-figure__caption">{{ caption }}</figcaption>
+      </figure>
+    </div>
+  </div>
+{% endif %}
+

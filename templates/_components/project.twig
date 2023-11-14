@@ -1,0 +1,41 @@
+{#
+Component for project card
+- @param: project - entry - the project entry with all fields
+#}
+
+{# variables #}
+{% set url = project.url ?? null %}
+
+{# WARNING: 
+assets / users and entries fields ALWAYS return an array, even if there is only one element in there
+We get the first item of the array with .one() 
+#}
+{% set image = project.projectImage.one() ?? null %}
+{% set title = project.title ?? null %}
+{% set subTitle = project.projectSubtitle ?? null %}
+
+{# template #}
+<article class="c-projectcard">
+  <a class="c-projectcard__link" href="{{ url }}">
+    <div class="c-projectcard__media">
+      {% if image %}
+        <img src="{{ image.getUrl({ width: 450, height: 600 }) }}"
+              srcset="{{ image.getUrl({ width: 450, height: 600 }) }} 450w,
+                      {{ image.getUrl({ width: 600, height: 800 }) }} 600w"
+              sizes="(min-width: 1024px) 25vw,
+                    (min-width: 500px) 50vw,
+                    100vw"
+              class="o-fluidimg"
+              loading="lazy"
+              decoding="async"
+              width="600"
+              height="800"
+              alt="{{ image.alt }}">
+      {% endif %}
+    </div>
+    <div class="c-projectcard__body">
+      <h3 class="c-projectcard__title">{{ title }}</h3>
+      <p class="c-projectcard__tagline">{{ subTitle }}</p>
+    </div>
+  </a>
+  </article>

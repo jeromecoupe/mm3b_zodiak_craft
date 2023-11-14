@@ -1,0 +1,12 @@
+columnSuffix: bwsmalqp
+contentColumnType: string
+fieldGroup: 9814f4ed-6059-4e2f-b479-f79703a6b72f # Company
+handle: companyEmail
+instructions: null
+name: 'Company Email'
+searchable: false
+settings:
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

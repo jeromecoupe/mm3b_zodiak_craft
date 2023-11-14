@@ -1,0 +1,19 @@
+columnSuffix: evxkvdks
+contentColumnType: string(512)
+fieldGroup: 799b1430-d0f6-4c3c-aecd-579df0e77f17 # Homepage
+handle: homeProjectsIntro
+instructions: null
+name: 'Projects Intro'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 128
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

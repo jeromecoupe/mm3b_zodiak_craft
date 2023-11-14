@@ -1,0 +1,19 @@
+columnSuffix: xxzbxbyg
+contentColumnType: string(512)
+fieldGroup: 0b539942-d8fb-499d-8876-516f1e5c69b6 # About page
+handle: aboutTeamIntro
+instructions: null
+name: 'Team intro'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 128
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

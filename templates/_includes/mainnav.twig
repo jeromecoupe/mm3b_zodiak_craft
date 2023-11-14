@@ -1,0 +1,46 @@
+<nav aria-label="main navigation">
+  {# 
+    get all the entries from the mainnav structure
+    - Craft returns an array of objects
+    - keys are fields handles
+      - navLabel: textfield (string)
+      - navEntry: entries field. WARNING: all relational fields in Craft (entries, assets, urers) always return an array of objects (even if there is only one element in there). We have to use .all or .one() to get it..
+  #}
+  {% set navEntries = craft.entries()
+    .section("mainnav")
+    .all()
+  %}
+
+  {% for item in navEntries %}
+    {% if loop.first %}<ul class="c-mainnav">{% endif %}
+    
+      {# create a linkedEntry variable > we get the first (and only) entry in our entries field `navEntry`  #}
+      {% set linkedEntry = item.navEntry.one() %}
+      
+      {# 
+        Page en cours
+        currentEntry vaut
+        - currentSection: si elle existe / est défine dans le contexte global (elle est définie dans les pages de détail)
+        - entry: si on est sur une page principale
+      #}
+      {% set currentEntry = currentSection ?? entry ?? null %}
+
+      {# 
+        Page en cours
+        On peut comparer
+        - l'ID de l'entry liée dans navEntry
+        - l'ID de currentEntry
+      #}
+      {% set currentClass = (linkedEntry.id == currentEntry.id) ? "is-current" : "" %}
+      {% set ariaCurrent = (linkedEntry.id == currentEntry.id) ? 'aria-current="page"' : "" %}
+    
+      <li class="c-mainnav__item">
+        <a class="c-mainnav__link  {{ currentClass }}" href="{{ linkedEntry.url }}" {{ ariaCurrent|raw }}>
+          {{ item.navLabel }}
+        </a>
+      </li>
+
+    {% if loop.last %}</ul>{% endif %}
+  {% endfor %}
+
+</nav>
