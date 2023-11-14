@@ -30,8 +30,13 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_KEY }}
 
       # Connect to fortrabbit
-      - name: Connect to server via SSH
-        run: ssh -tt -v ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: ls -hal
 
       # Runs a single command using the runners shell
       - name: List files
