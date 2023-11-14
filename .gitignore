@@ -11,3 +11,4 @@
 /.env
 /vendor
 /web/uploads/**/*
+/db_dumps
