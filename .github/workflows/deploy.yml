@@ -31,7 +31,7 @@ jobs:
 
       # RSYNC files
       - name: Sync files to production
-        run: rsync -avn --delete-after --exclude={"/.ddev/","/.git/","/.github/","/node_modules/","/web/uploads/"} -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/
+        run: rsync -av --delete-after --exclude={"/.ddev/","/.git/","/.github/","/node_modules/","/web/uploads/"} -e "ssh -o StrictHostKeyChecking=no" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/
 
       # Execute SSH commands
       - name: executing remote ssh commands
