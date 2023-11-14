@@ -2,6 +2,18 @@ defaultPlacement: end
 enableVersioning: true
 handle: projects
 name: Projects
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'preview project'
+      -
+        - urlFormat
+        - 'projects/{slug}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak

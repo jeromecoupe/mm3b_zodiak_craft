@@ -2,6 +2,18 @@ defaultPlacement: end
 enableVersioning: true
 handle: aboutPage
 name: 'About Page'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - preview
+      -
+        - urlFormat
+        - about
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   a345fca1-3553-4b32-a775-ea6d89626b13: # zodiak
