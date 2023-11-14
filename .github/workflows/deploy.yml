@@ -31,7 +31,7 @@ jobs:
 
       # Connect to fortrabbit
       - name: Connect to server via SSH
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+        run: ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
 
       # Runs a single command using the runners shell
       - name: List files
